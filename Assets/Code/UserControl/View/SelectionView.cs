@@ -1,7 +1,7 @@
 using Abstractions;
 using UnityEngine;
 
-namespace Core
+namespace UserControl.View
 {
     public sealed class SelectionView : MonoBehaviour, ISelectionView
     {

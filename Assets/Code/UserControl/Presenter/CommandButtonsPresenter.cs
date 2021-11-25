@@ -26,6 +26,12 @@ namespace UserControl.Presenter
             _commandButtonsView.CommandSelected += CommandSelected;
         }
 
+        private void OnDestroy()
+        {
+            _selectedValue.SelectionChanged -= SelectionChanged;
+            _commandButtonsView.CommandSelected -= CommandSelected;
+        }
+
         private void SelectionChanged(ISelectable selectable)
         {
             if(selectable == _currentSelectable)
