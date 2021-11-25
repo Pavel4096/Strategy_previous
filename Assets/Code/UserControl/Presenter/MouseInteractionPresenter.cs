@@ -1,12 +1,14 @@
 using UserControl.Model;
 using Abstractions;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace UserControl.Presenter
 {
     public sealed class MouseInteractionPresenter : MonoBehaviour
     {
         [SerializeField] private SelectedValue _selectedValue;
+        [SerializeField] private EventSystem _eventSystem;
         private Camera _camera;
         private RaycastHit[] hits;
 
@@ -23,6 +25,9 @@ namespace UserControl.Presenter
             if(!Input.GetMouseButtonUp(_leftMouseButton))
                 return;
             
+            if(_eventSystem.IsPointerOverGameObject())
+                return;
+            
             var count = Physics.RaycastNonAlloc(_camera.ScreenPointToRay(Input.mousePosition), hits);
 
             bool selectionFound = false;
@@ -34,7 +39,6 @@ namespace UserControl.Presenter
                 
                 _selectedValue.ChangeSelection(currentSelectable);
                 selectionFound = true;
-                //currentSelectable.ProduceUnit();
                 break;
             }
 
