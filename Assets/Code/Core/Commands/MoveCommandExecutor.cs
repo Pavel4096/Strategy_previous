@@ -1,8 +1,7 @@
-using Abstractions;
 using Abstractions.Commands;
 using UnityEngine;
 
-namespace Core
+namespace Core.Commands
 {
     public sealed class MoveCommandExecutor : CommandExecutorBase<IMoveCommand>
     {

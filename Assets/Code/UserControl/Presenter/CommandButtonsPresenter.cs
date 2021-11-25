@@ -52,15 +52,18 @@ namespace UserControl.Presenter
                 case CommandExecutorBase<IProduceUnitCommand> unitProducer:
                     unitProducer.ExecuteSpecificCommand(_context.Inject(new ProduceUnitCommand2()));
                     break;
+                case CommandExecutorBase<IAttackCommand> attackExecutor:
+                    attackExecutor.ExecuteSpecificCommand(_context.Inject(new AttackCommand()));
+                    break;
+                case CommandExecutorBase<IPatrolCommand> patrolExecutor:
+                    patrolExecutor.ExecuteSpecificCommand(_context.Inject(new PatrolCommand()));
+                    break;
+                case CommandExecutorBase<IStopCommand> stopExecutor:
+                    stopExecutor.ExecuteSpecificCommand(_context.Inject(new StopCommand()));
+                    break;
                 default:
                     throw new ApplicationException($"Specified command is not implemented: {commandExecutor.GetType().FullName}");
             }
-
-            /*var unitProducer = commandExecutor as CommandExecutorBase<IProduceUnitCommand>;
-            if(unitProducer != null)
-            {
-                unitProducer.ExecuteSpecificCommand(_context.Inject(new ProduceUnitCommand2()));
-            }*/
         }
     }
 }

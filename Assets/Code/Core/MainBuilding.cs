@@ -9,18 +9,13 @@ namespace Core
         [SerializeField] private Transform _unitsParent;
         [SerializeField] private float _maxHealth;
         [SerializeField] private Sprite _icon;
-        [SerializeField] private GameObject _selection;
         private float _health;
 
         public float MaxHealth => _maxHealth;
         public float Health => _health;
         public Sprite Icon => _icon;
-        public bool Selected
-        {
-            set => _selection.SetActive(value);
-        }
 
-        private void Start()
+        private void Awake()
         {
             _health = _maxHealth;
         }
