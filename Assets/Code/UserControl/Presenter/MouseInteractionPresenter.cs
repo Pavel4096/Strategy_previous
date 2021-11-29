@@ -1,5 +1,6 @@
 using UserControl.Model;
 using Abstractions;
+using Zenject;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -7,9 +8,10 @@ namespace UserControl.Presenter
 {
     public sealed class MouseInteractionPresenter : MonoBehaviour
     {
-        [SerializeField] private SelectedValue _selectedValue;
-        [SerializeField] private Vector3Value _vector3Value;
         [SerializeField] private EventSystem _eventSystem;
+        [Inject] private SelectedValue _selectedValue;
+        [Inject] private Vector3Value _vector3Value;
+        [Inject] private AttackableValue _attackableValue;
         private Camera _camera;
         private RaycastHit[] hits;
         private int _groundLayer;
@@ -55,6 +57,12 @@ namespace UserControl.Presenter
                 {
                     if(hit.transform.gameObject.layer == _groundLayer)
                         _vector3Value.ChangeValue(hit.point);
+                    else
+                    {
+                        IAttackable attackable = hit.transform.GetComponentInParent<IAttackable>();
+                        if(attackable != null)
+                            _attackableValue.ChangeValue(attackable);
+                    }
                 }
             }
         }

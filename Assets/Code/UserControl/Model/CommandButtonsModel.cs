@@ -15,6 +15,7 @@ namespace UserControl.Model
         [Inject] private CommandCreatorBase<IProduceUnitCommand> _produceUnitCommand;
         [Inject] private CommandCreatorBase<IMoveCommand> _moveCommand;
         [Inject] private CommandCreatorBase<IPatrolCommand> _patrolCommand;
+        [Inject] private CommandCreatorBase<IAttackCommand> _attackCommand;
 
         private bool _isCommandPending;
 
@@ -29,6 +30,7 @@ namespace UserControl.Model
             _produceUnitCommand.ProcessCommandCreation(executor, (command) => ProcessCommandExecution(executor, command));
             _moveCommand.ProcessCommandCreation(executor, (command) => ProcessCommandExecution(executor, command));
             _patrolCommand.ProcessCommandCreation(executor, (command) => ProcessCommandExecution(executor, command));
+            _attackCommand.ProcessCommandCreation(executor, (command) => ProcessCommandExecution(executor, command));
         }
 
         public void SelectionChanged()
@@ -48,6 +50,9 @@ namespace UserControl.Model
         {
             _stopCommand.ProcessCancel();
             _produceUnitCommand.ProcessCancel();
+            _moveCommand.ProcessCancel();
+            _patrolCommand.ProcessCancel();
+            _attackCommand.ProcessCancel();
 
             OnCommandCancel?.Invoke();
         }
