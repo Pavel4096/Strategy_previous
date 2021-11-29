@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 54929881}
   - component: {fileID: 54929880}
   - component: {fileID: 54929879}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +297,7 @@ GameObject:
   - component: {fileID: 257278499}
   - component: {fileID: 257278498}
   - component: {fileID: 257278497}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -393,7 +393,7 @@ GameObject:
   - component: {fileID: 321707434}
   - component: {fileID: 321707433}
   - component: {fileID: 321707432}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -489,7 +489,7 @@ GameObject:
   - component: {fileID: 326505009}
   - component: {fileID: 326505008}
   - component: {fileID: 326505007}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -603,6 +603,84 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &419877143
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 419877146}
+  - component: {fileID: 419877145}
+  - component: {fileID: 419877144}
+  m_Layer: 0
+  m_Name: SceneContext
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &419877144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419877143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc50cc70289f44642855ef496ff4d563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _assetsContext: {fileID: 11400000, guid: 42cb561f8b9f80947a9bf5643df94ff8, type: 2}
+  _vector3Value: {fileID: 11400000, guid: cb4515e9d63d2d646b4ab68615c5f286, type: 2}
+--- !u!114 &419877145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419877143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89715ad69b973a14899afa2c6730b30b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scriptableObjectInstallers: []
+  _monoInstallers:
+  - {fileID: 419877144}
+  _installerPrefabs: []
+  _autoRun: 1
+  OnPreInstall:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPostInstall:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPreResolve:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPostResolve:
+    m_PersistentCalls:
+      m_Calls: []
+  _parentNewObjectsUnderSceneContext: 0
+  _contractNames: []
+  _parentContractNames: []
+--- !u!4 &419877146
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419877143}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -708,7 +786,7 @@ GameObject:
   - component: {fileID: 716799503}
   - component: {fileID: 716799502}
   - component: {fileID: 716799501}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -884,7 +962,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1207519557}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1021,7 +1099,7 @@ GameObject:
   - component: {fileID: 1424240578}
   - component: {fileID: 1424240577}
   - component: {fileID: 1424240576}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1117,7 +1195,7 @@ GameObject:
   - component: {fileID: 1495258775}
   - component: {fileID: 1495258774}
   - component: {fileID: 1495258773}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1462,6 +1540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _selectedValue: {fileID: 11400000, guid: dc3f50bedec664847877ba42d18c3bb7, type: 2}
+  _vector3Value: {fileID: 11400000, guid: cb4515e9d63d2d646b4ab68615c5f286, type: 2}
   _eventSystem: {fileID: 1236215754}
 --- !u!4 &1927409033
 Transform:
@@ -1489,7 +1568,7 @@ GameObject:
   - component: {fileID: 1955981867}
   - component: {fileID: 1955981866}
   - component: {fileID: 1955981865}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground0
   m_TagString: Untagged
   m_Icon: {fileID: 0}

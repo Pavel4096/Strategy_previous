@@ -11,12 +11,12 @@ namespace UserControl.Presenter
 
         private void Awake()
         {
-            _selectedValue.SelectionChanged += ChangeSelection;
+            _selectedValue.ValueChanged += ChangeSelection;
         }
 
         private void OnDestroy()
         {
-            _selectedValue.SelectionChanged -= ChangeSelection;
+            _selectedValue.ValueChanged -= ChangeSelection;
         }
 
         private void ChangeSelection(ISelectable selectable)
@@ -25,7 +25,6 @@ namespace UserControl.Presenter
             {
                 ISelectionView currentSelection = (_currentSelection as Component).GetComponent<ISelectionView>();
                 currentSelection.SetSelected(false);
-                //_currentSelection.Selected = false;
             }
             
             _currentSelection = selectable;
@@ -34,7 +33,6 @@ namespace UserControl.Presenter
             {
                 ISelectionView newSelection = (selectable as Component).GetComponent<ISelectionView>();
                 newSelection.SetSelected(true);
-                //selectable.Selected = true;
             }
         }
     }
