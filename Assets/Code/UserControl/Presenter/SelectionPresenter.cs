@@ -22,12 +22,20 @@ namespace UserControl.Presenter
         private void ChangeSelection(ISelectable selectable)
         {
             if(_currentSelection != null)
-                _currentSelection.Selected = false;
+            {
+                ISelectionView currentSelection = (_currentSelection as Component).GetComponent<ISelectionView>();
+                currentSelection.SetSelected(false);
+                //_currentSelection.Selected = false;
+            }
             
             _currentSelection = selectable;
 
             if(selectable != null)
-            selectable.Selected = true;
+            {
+                ISelectionView newSelection = (selectable as Component).GetComponent<ISelectionView>();
+                newSelection.SetSelected(true);
+                //selectable.Selected = true;
+            }
         }
     }
 }

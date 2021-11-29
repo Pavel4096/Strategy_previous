@@ -4,9 +4,8 @@ using UnityEngine;
 
 namespace Core
 {
-    public sealed class MainBuilding : CommandExecutorBase<IProduceUnitCommand>, ISelectable
+    public sealed class UnitSelectable : MonoBehaviour, ISelectable
     {
-        [SerializeField] private Transform _unitsParent;
         [SerializeField] private float _maxHealth;
         [SerializeField] private Sprite _icon;
         private float _health;
@@ -18,11 +17,6 @@ namespace Core
         private void Awake()
         {
             _health = _maxHealth;
-        }
-
-        public override void ExecuteSpecificCommand(IProduceUnitCommand command)
-        {
-            Instantiate(command.UnitPrefab, new Vector3(Random.Range(0.0f, 8.0f), 0.0f, Random.Range(0.0f, 8.0f)), Quaternion.identity, _unitsParent);
         }
     }
 }

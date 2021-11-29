@@ -298,6 +298,7 @@ GameObject:
   - component: {fileID: 3765944341494981526}
   - component: {fileID: 3765944341509289782}
   - component: {fileID: 1674513388113418679}
+  - component: {fileID: 7192925670274427693}
   m_Layer: 0
   m_Name: Building0
   m_TagString: Untagged
@@ -363,10 +364,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22051112c94f5494fb42cf45ef71f184, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unitPrefab: {fileID: 3546355718127240123, guid: 22faf85378110984bbd082c797bf03f1, type: 3}
   _unitsParent: {fileID: 0}
   _maxHealth: 2000
   _icon: {fileID: 21300000, guid: 762818933f0f4b9478a2cb61b565ca6c, type: 3}
+  _selection: {fileID: 4638791747852797997}
+--- !u!114 &7192925670274427693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3765944341495087030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e703229bab23c894394946446475a566, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _selection: {fileID: 4638791747852797997}
 --- !u!1 &4638791747852797997
 GameObject:
