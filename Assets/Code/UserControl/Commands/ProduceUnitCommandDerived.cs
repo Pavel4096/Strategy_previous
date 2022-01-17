@@ -4,6 +4,6 @@ using UnityEngine;
 
 namespace UserControl.Commands
 {
-    public sealed class ProduceUnitCommand2 : ProduceUnitCommand
+    public sealed class ProduceUnitCommandDerived : ProduceUnitCommand
     {}
 }

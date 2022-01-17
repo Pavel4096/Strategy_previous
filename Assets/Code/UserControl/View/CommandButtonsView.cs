@@ -47,6 +47,14 @@ namespace UserControl.View
             }
         }
 
+        public void BlockInteraction(ICommandExecutor executor)
+        {
+            UnblockAllInteractions();
+            GetButtonObjectByType(executor.GetType()).GetComponent<Selectable>().interactable = false;
+        }
+
+        public void UnblockAllInteractions() => SetInteractable(true);
+
         public void Clear()
         {
             foreach(var currentExecutor in _buttonsByExecutorType)
@@ -54,6 +62,26 @@ namespace UserControl.View
                 currentExecutor.Value.SetActive(false);
                 currentExecutor.Value.GetComponent<Button>().onClick.RemoveAllListeners();
             }
+        }
+
+        private void SetInteractable(bool value)
+        {
+            _moveButton.GetComponent<Selectable>().interactable = value;
+            _attackButton.GetComponent<Selectable>().interactable = value;
+            _patrolButton.GetComponent<Selectable>().interactable = value;
+            _produceUnitButton.GetComponent<Selectable>().interactable = value;
+            _stopButton.GetComponent<Selectable>().interactable = value;
+        }
+
+        private GameObject GetButtonObjectByType(Type executorType)
+        {
+            foreach(var currentButton in _buttonsByExecutorType)
+            {
+                if(currentButton.Key.IsAssignableFrom(executorType))
+                    return currentButton.Value;
+            }
+
+            return null;
         }
     }
 }

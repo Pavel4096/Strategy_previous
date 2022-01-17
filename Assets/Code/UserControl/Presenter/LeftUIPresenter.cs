@@ -18,13 +18,13 @@ namespace UserControl.Presenter
 
         private void Start()
         {
-            _selectedValue.SelectionChanged += UpdateUI;
+            _selectedValue.ValueChanged += UpdateUI;
             UpdateUI(null);
         }
 
         private void OnDestroy()
         {
-            _selectedValue.SelectionChanged -= UpdateUI;
+            _selectedValue.ValueChanged -= UpdateUI;
         }
 
         private void UpdateUI(ISelectable selectable)

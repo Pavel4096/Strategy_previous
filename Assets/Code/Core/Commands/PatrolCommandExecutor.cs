@@ -7,7 +7,7 @@ namespace Core.Commands
     {
         public override void ExecuteSpecificCommand(IPatrolCommand patrolCommand)
         {
-            Debug.Log("Patrol command");
+            Debug.Log(patrolCommand.Position);
         }
     }
 }
